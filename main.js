@@ -18,4 +18,27 @@ function takephoto()
 console.log('ml5 version:', ml5.version);
 
 classifier=ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/3QZXI0JuK/model.json', Loaded);
+function Loaded()
+{
+    console.log('Model Loaded!');
+}
 
+function identify()
+{
+    img = document.getElementById('selfie');
+    classifier.classify(img, gotResult);
+
+    
+}
+
+function gotResult(error, results)
+{
+    console.log(results);
+    if(error){
+        console.log(error);
+    }
+    else{
+        document.getElementById("obj_button").innerHTML = results[0].label;
+        document.getElementById("acc_button").innerHTML = results[0].confidence.toFixed(3);
+    }
+}
