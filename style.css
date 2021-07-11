@@ -13,8 +13,15 @@ body
 }
 #camera
 {
-    border:rgb(212, 236, 236) 2px dashed;
-    height: 300px;
+    border:rgb(212, 236, 236) 2px;
+    height: 250px;
+    width: 350px;
+    border-style:groove;
+}
+#result
+{
+    border:rgb(212, 236, 236) 2px double;
+    height: 250px;
     width: 350px;
 }
 .takephoto
